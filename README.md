@@ -1,6 +1,6 @@
 # Reddit Claude Analysis - Real-Time Streaming Pipeline
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project implements a **real-time data engineering pipeline** that:
 - Streams Reddit posts and comments mentioning Claude AI (and competitors)
@@ -14,7 +14,7 @@ Reddit API → Python Producer → Kafka Topics → Python Consumer →
 Sentiment Analysis → Star Schema → SFTP → Cloudera/Hive → Power BI
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Data Collection**: Python (PRAW - Reddit API)
 - **Stream Processing**: Apache Kafka
@@ -24,7 +24,7 @@ Sentiment Analysis → Star Schema → SFTP → Cloudera/Hive → Power BI
 - **Data Warehouse**: Apache Hive on Cloudera
 - **Visualization**: Power BI (or Tableau)
 
-## 📋 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 - Ubuntu 20.04+ or similar Linux distribution
@@ -52,7 +52,7 @@ export KAFKA_HOME=/opt/kafka
 export PATH=$PATH:$KAFKA_HOME/bin
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone and Setup
 ```bash
@@ -119,7 +119,7 @@ python3 processors/star_schema_generator.py
 python3 export/sftp_transfer.py
 ```
 
-## 📊 Data Flow Details
+##  Data Flow Details
 
 ### Stage 1: Reddit Data Collection
 **Script**: `producers/reddit_producer.py`
@@ -179,7 +179,7 @@ Generates star schema with:
 - Loads data from CSVs
 - Defines analytical views
 
-## 🔍 Key Analytical Queries
+##  Key Analytical Queries
 
 ```sql
 -- 1. Claude vs Competitors Sentiment
@@ -215,7 +215,7 @@ GROUP BY t.topic_name
 ORDER BY count DESC;
 ```
 
-## 📈 Power BI Dashboard
+##  Power BI Dashboard
 
 ### Connecting to Hive
 1. Open Power BI Desktop
@@ -246,7 +246,7 @@ ORDER BY count DESC;
 - Filter by date range, sentiment, topics
 - Export capabilities
 
-## 🔧 Configuration Options
+##  Configuration Options
 
 ### Monitoring More Subreddits
 Edit `config/config.yaml`:
@@ -272,7 +272,7 @@ processing:
   processing_interval_seconds: 60
 ```
 
-## 📝 Monitoring & Logs
+##  Monitoring & Logs
 
 ### Check Pipeline Status
 ```bash
@@ -294,7 +294,7 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 \
 - Consumer processing: ~100-200 messages/minute
 - Sentiment analysis: ~5-10 messages/second
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Issue: Reddit API Rate Limits
 **Solution**: Increase sleep intervals in `reddit_producer.py`
@@ -319,7 +319,7 @@ ps aux | grep kafka
 - Check SSH credentials
 - Ensure remote directory exists
 
-## 📚 Project Structure
+##  Project Structure
 ```
 reddit-claude-analysis/
 ├── config/
@@ -344,7 +344,7 @@ reddit-claude-analysis/
 └── README.md                    # This file
 ```
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This project demonstrates:
 1. **Real-time streaming** with Kafka
@@ -356,7 +356,7 @@ This project demonstrates:
 7. **API integration** (Reddit, SFTP)
 8. **Production-ready** error handling
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - [ ] Add Apache Airflow for scheduling
 - [ ] Implement Spark for large-scale processing
@@ -367,15 +367,15 @@ This project demonstrates:
 - [ ] Add incremental loading logic
 - [ ] Create REST API for data access
 
-## 📄 License
+##  License
 
 MIT License - Feel free to use for learning and portfolio projects
 
-## 👤 Author
+##  Author
 
 Built as a data engineering portfolio project demonstrating end-to-end pipeline development.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Reddit API (PRAW library)
 - Apache Kafka community
